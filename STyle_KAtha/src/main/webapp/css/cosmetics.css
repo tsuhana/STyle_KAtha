@@ -1,0 +1,680 @@
+@charset "UTF-8";
+@charset "UTF-8";
+/* Import only necessary font weights */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eff7cc, #cef6f6);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Common Styles */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header & Navbar */
+.head-container {
+    background-color: rgb(201, 252, 150);
+}
+
+.head_txt {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 300; /* Using light weight instead of "light" */
+    letter-spacing: 5px;
+}
+
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.navbar {
+    height: 12vh;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(144, 238, 144, 0.5), transparent);
+}
+
+.logo {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(91, 181, 96);
+}
+
+span {
+    color: lightpink;
+}
+
+.navlist {
+    gap: 2.5rem;
+    font-size: larger;
+}
+
+.link {
+    font-size: .95rem;
+    color: rgb(91, 181, 96);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: small;
+}
+
+.link-active,
+.link:hover,
+.icon:hover {
+    color: lightpink;
+}
+
+.nav-icons {
+    gap: .8em;
+}
+
+.icon {
+    font-size: .9rem;
+    color: rgb(91, 181, 96);
+    background: rgb(198, 252, 193);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* Search Box */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    width: 0;
+    padding: 10px;
+    border: 1px solid #a8ff85;
+    border-radius: 20px;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+    opacity: 0;
+}
+
+.search-container:hover input {
+    width: 200px;
+    opacity: 1;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(91, 181, 96);
+    text-align: center;
+}
+
+
+
+
+.cosmetics-hero {
+    height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* video-background र video styling unchanged */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Dim overlay हटाउन यो भागलाई खाली पार्नुहोस् */
+.cosmetics-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0); /* No dim */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cosmetics-hero { height: 400px; }
+    #myVideo { height: 400px; }
+}
+@media (max-width: 480px) {
+    .cosmetics-hero { height: 300px; }
+    #myVideo { height: 300px; }
+}
+
+/* Cosmetics section unchanged */
+.cosmetics-section {
+    background: linear-gradient(to right, #fefefe, #f9f1b0);
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 60px 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.cosmetics-section h1 {
+    font-size: 3rem;
+    color: #fc98b9;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.cosmetics-section h3 {
+    font-size: 1.5rem;
+    color: #23970f;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+    font-family: 'Cinzel', serif;
+}
+
+.cosmetics-desc {
+    font-size: 1.1rem;
+    color: #6d4c41;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-family: 'Cinzel', serif ;
+    font-style: italic;
+}
+
+
+/* Featured Items Section */
+.featured-Items {
+    padding: 2rem;
+    background: linear-gradient(rgb(253, 253, 253), rgb(162, 232, 248));
+    text-align: center;
+}
+  
+.featured-Items h2 {
+    font-size: 2.2rem;
+    color: #d63384; /* Stylish pink for heading */
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+  
+  /* Grid Layout */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+  
+@media (max-width: 1024px) {
+    .featured-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+}
+  
+@media (max-width: 768px) {
+    .featured-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+  
+@media (max-width: 480px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+}
+  
+
+/* Product Card Styling */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Increased height for better spacing */
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.15);
+}
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(to right, rgb(242, 188, 89), rgb(251, 81, 81));
+    color: white;
+    padding: 5px 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Taller image area */
+    overflow: hidden;
+}
+
+/* Better image display */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed to contain to show full product */
+    transition: opacity 0.4s ease;
+}
+
+/* Fixed product info layout */
+.product-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+  
+/* Product title styling */
+.product-info h3 {
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+  
+/* Better price positioning */
+.price {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem; /* Added margin above and below price */
+}
+  
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+}
+  
+.new-price {
+    color: #e63946;
+    font-weight: bold;
+}
+  
+/* Product hover actions (Add to Cart and Wishlist) */
+.product-hover {
+    position: relative; /* Changed from absolute to relative */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    opacity: 1; /* Always visible */
+    display: flex;
+    gap: 10px;
+    padding: 0 1rem 1rem; /* Added padding */
+    justify-content: center;
+}
+  
+.product-card:hover .product-hover {
+    opacity: 1;
+}
+  
+  /* Buttons */
+.add-to-cart,
+.wishlist {
+    background-color: #138c00;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.add-to-cart:hover,
+.wishlist:hover {
+    background-color: #fe7db1;
+}
+  
+.wishlist i {
+    font-size: 1rem;
+}
+  
+.product-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+  
+.product-image img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+  
+.product-image .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+  
+.product-card:hover .hover-img {
+    opacity: 1;
+}
+  
+.product-card:hover .default-img {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+    background: linear-gradient(to bottom, #f8f8f8, #e8f5e9);
+    padding: 50px 0 20px;
+    color: #555;
+    font-family: "Lato", sans-serif;
+}
+
+.footer-container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 50px;
+}
+
+.footer-logo a {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(91, 181, 96);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    color: rgb(91, 181, 96);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: lightpink;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: lightpink;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: rgb(91, 181, 96);
+    min-width: 16px;
+}
+
+/* Updated Footer Social Media Section */
+.social-and-payment {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;  /* Increased gap for more spacing between icons */
+    justify-content: center;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(198, 252, 193);
+    color: rgb(91, 181, 96);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: lightpink;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    max-width: 80%;
+    margin: 20px auto 0;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.payment-methods i {
+    font-size: 24px;
+    color: #666;
+}
+
+.payment-icon {
+    height: 24px;
+    width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container, 
+    .social-and-newsletter, 
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-logo, 
+    .footer-links, 
+    .footer-column {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-icons {
+        margin: 0 auto 20px;
+    }
+    
+    .contact-info li {
+        justify-content: center;
+    }
+    
+    .payment-methods {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    /* Add responsive styles for other sections */
+    .hero-container {
+        max-width: 90%;
+        top: 15%;
+    }
+    
+    .textbig {
+        font-size: 2rem;
+    }
+    
+    .textsmll {
+        font-size: 1rem;
+    }
+    
+    .navlist {
+        display: none; /* You may want to implement a mobile menu toggle */
+    }
+}

@@ -1,0 +1,420 @@
+@charset "UTF-8";
+@charset "UTF-8";
+/* Import Lato font from Google Fonts in three weights: light (300), regular (400), and bold (700) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* CSS Reset and base styles */
+* {
+  box-sizing: border-box; /* Makes sizing calculations include padding and border */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  font-family: 'Lato', sans-serif; /* Set primary font */
+  background: linear-gradient(135deg, #c0f6b6,  #f7fbb9, #befaba); /* Create gradient background from gray to light green */
+  color: #49bd32; /* Set default text color to green */
+  min-height: 100vh; /* Ensure body is at least full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 1.5rem; /* Add padding around the entire page */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #2f6f4e; /* Set link color to match text */
+  font-weight: 600; /* Make links semi-bold */
+  transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+a:hover {
+  color: #db2777; /* Change link color to pink on hover */
+}
+
+/* Container for layout control */
+.container {
+  max-width: 80rem; /* Set maximum width (1280px at 16px base) */
+  width: 100%; /* Take full available width up to max-width */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+  justify-content: space-between; /* Space out content horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+/* Header styling */
+header {
+  width: 100%;
+  max-width: 80rem; /* Match container max-width */
+  margin-bottom: 2.5rem; /* Space between header and main content */
+}
+header h1 .underscore {
+    color: #f199a8; /* Pink color for the underscore */
+  }
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align on mobile */
+}
+
+/* Media query for screens wider than 640px (sm breakpoint) */
+@media (min-width: 640px) {
+  .header-left {
+    align-items: flex-start; /* Left align on larger screens */
+  }
+}
+
+header h1 {
+  font-weight: 800; /* Extra bold */
+  font-size: 2.5rem; /* Large size for logo */
+  color: #db2777; /* Pink color for primary brand */
+  letter-spacing: 0.05em; /* Slightly spaced out text */
+  margin: 0; /* Remove default margin */
+}
+
+header h1 span {
+  color: #0f8230; /* Darker pink for the Nepali "_कथा" part */
+}
+
+header p {
+  margin-top: 0.25rem; /* Small space above subtitle */
+  font-weight: 700; /* Bold */
+  font-size: 1.125rem; /* Slightly larger than default */
+  color: #166534; /* Green color */
+}
+
+nav {
+  margin-top: 1rem; /* Space above nav on mobile */
+  display: flex;
+  gap: 1.5rem; /* Space between nav items */
+  font-weight: 700; /* Bold */
+  font-size: 1.125rem; /* Slightly larger text */
+  color: #166534; /* Green color to match subtitle */
+}
+
+/* Reset margin on larger screens */
+@media (min-width: 640px) {
+  nav {
+    margin-top: 0;
+  }
+}
+
+/* Main content area */
+main {
+  max-width: 80rem; /* Match container max-width */
+  width: 100%;
+  background: white; /* White background for content */
+  border-radius: 1.25rem; /* Rounded corners */
+  box-shadow: 0 10px 15px -3px rgba(219, 39, 119, 0.3),
+    0 4px 6px -4px rgba(219, 39, 119, 0.2); /* Pink-tinted shadow for depth */
+  padding: 2.5rem; /* Internal spacing */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically on mobile */
+  gap: 3rem; /* Space between sections */
+}
+
+/* Switch to horizontal layout on medium screens and larger */
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+}
+
+/* Profile section styling */
+.profile-section {
+  flex: 1 1 33%; /* Take 33% of space on desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content */
+}
+
+.profile-img {
+  width: 12rem; /* Fixed size for profile image */
+  height: 12rem;
+  border-radius: 9999px; /* Make image circular */
+  object-fit: cover; /* Ensure image fills circle properly */
+  border: 8px solid #f472b6; /* Pink border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 1.5rem; /* Space below image */
+}
+
+.upload-btn {
+  cursor: pointer; /* Show pointer cursor on hover */
+  background-color: #db2777; /* Pink background */
+  color: white; /* White text */
+  font-weight: 700; /* Bold */
+  padding: 0.75rem 1.5rem; /* Vertical and horizontal padding */
+  border-radius: 9999px; /* Fully rounded corners */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between icon and text */
+  box-shadow: 0 4px 6px rgba(219, 39, 119, 0.4); /* Pink-tinted shadow */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.upload-btn:hover {
+  background-color: #9d174d; /* Darker pink on hover */
+}
+
+.member-since {
+  margin-top: 1.5rem; /* Space above text */
+  font-weight: 700; /* Bold */
+  font-size: 1.125rem; /* Slightly larger than default */
+  color: #166534; /* Green text */
+  letter-spacing: 0.05em; /* Slightly spaced out text */
+}
+
+.member-since span {
+  font-weight: 900; /* Extra bold for emphasis */
+}
+
+/* Customer info section */
+.customer-info {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #166534;
+}
+
+.customer-info p {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.customer-info i {
+  color: #db2777;
+  margin-right: 0.75rem;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.customer-info span {
+  font-weight: 900;
+  margin-left: 0.25rem;
+}
+
+/* Info section styling */
+.info-section {
+  flex: 1 1 67%; /* Take 67% of space on desktop */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space between child elements */
+}
+
+.user-name {
+  font-weight: 800; /* Extra bold */
+  font-size: 2.5rem; /* Large text */
+  color: #9d174d; /* Dark pink */
+  margin: 0 0 0.5rem 0; /* Bottom margin only */
+  letter-spacing: 0.02em; /* Slightly spaced out text */
+}
+
+.user-email {
+  font-weight: 700; /* Bold */
+  font-size: 1.125rem; /* Slightly larger than default */
+  color: #166534; /* Green text */
+  margin-bottom: 2rem; /* Space below email */
+  letter-spacing: 0.05em; /* Slightly spaced out text */
+}
+
+/* Stats cards styling */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 2rem; /* Space between cards */
+  margin-bottom: 2.5rem; /* Space below section */
+}
+
+/* Three columns on small screens and larger */
+@media (min-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-card {
+  background-color: #fce7f3; /* Very light pink background */
+  border-radius: 1rem; /* Rounded corners */
+  padding: 1.5rem; /* Internal spacing */
+  box-shadow: 0 4px 6px rgba(219, 39, 119, 0.2); /* Pink-tinted shadow */
+  text-align: center; /* Center content */
+}
+
+.stat-title {
+  color: #db2777; /* Pink text */
+  font-weight: 700; /* Bold */
+  font-size: 1.25rem; /* Larger text */
+  margin-bottom: 0.5rem; /* Space below title */
+}
+
+.stat-value {
+  color: #166534; /* Green text */
+  font-weight: 900; /* Extra bold */
+  font-size: 2rem; /* Large text for emphasis */
+}
+
+/* User info section (previously contact details) */
+.user-info {
+  margin-bottom: 2.5rem; /* Space below section */
+}
+
+.user-info h3 {
+  color: #db2777; /* Pink heading */
+  font-weight: 700; /* Bold */
+  font-size: 1.5rem; /* Large text */
+  margin-bottom: 1.25rem; /* Space below heading */
+  border-bottom: 2px solid #fbcfe8; /* Light pink border below */
+  padding-bottom: 0.5rem; /* Space between text and border */
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #166534;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.form-group label i {
+  color: #db2777;
+  margin-right: 0.75rem;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid #fbcfe8;
+  border-radius: 0.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #166534;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #db2777;
+}
+
+.save-btn {
+  margin-top: 1rem;
+  background-color: #db2777;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px rgba(219, 39, 119, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #9d174d;
+}
+
+/* Cart items section */
+.cart-items {
+  margin-bottom: 2.5rem; /* Space below section */
+}
+
+.cart-items h3 {
+  color: #db2777; /* Pink heading */
+  font-weight: 700; /* Bold */
+  font-size: 1.5rem; /* Large text */
+  margin-bottom: 1.25rem; /* Space below heading */
+  border-bottom: 2px solid #fbcfe8; /* Light pink border below */
+  padding-bottom: 0.5rem; /* Space between text and border */
+}
+
+.cart-items ul {
+  list-style: disc inside; /* Bullet points inside the container */
+  color: #166534; /* Green text */
+  font-weight: 600; /* Semi-bold */
+  font-size: 1.125rem; /* Slightly larger text */
+  margin: 0; /* Remove default margin */
+  padding-left: 0; /* Remove default padding */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Space between list items */
+}
+
+/* Recent orders section */
+.recent-orders {
+  margin-bottom: 2.5rem; /* Space below section */
+}
+
+.recent-orders h3 {
+  color: #db2777; /* Pink heading */
+  font-weight: 700; /* Bold */
+  font-size: 1.5rem; /* Large text */
+  margin-bottom: 1.25rem; /* Space below heading */
+  border-bottom: 2px solid #fbcfe8; /* Light pink border below */
+  padding-bottom: 0.5rem; /* Space between text and border */
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Allow horizontal scrolling for wide tables */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(219, 39, 119, 0.2); /* Pink-tinted shadow */
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Remove space between cells */
+  background: white; /* White background */
+}
+
+thead {
+  background-color: #fce7f3; /* Light pink background for header */
+  color: #9d174d; /* Dark pink text */
+  font-weight: 700; /* Bold */
+}
+
+th,
+td {
+  padding: 0.75rem 1.5rem; /* Internal cell padding */
+  border: 1px solid #fbcfe8; /* Light pink border */
+  text-align: left; /* Left align text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fce7f3; /* Light pink background for alternate rows */
+}
+
+tbody td {
+  color: #14532d; /* Dark green text */
+}
+
+.status {
+  font-weight: 700; /* Bold */
+}
+
+.status.shipped {
+  color: #ca8a04; /* Yellow color for shipped status */
+}
+
+.status.delivered {
+  color: #15803d; /* Green color for delivered status */
+}
+
+.status.processing {
+  color: #ca8a04; /* Yellow color for processing status */
+}

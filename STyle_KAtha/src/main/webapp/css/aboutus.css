@@ -1,0 +1,574 @@
+@charset "UTF-8";
+/* Import only necessary font weights */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f6f6f6, #edffe6);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Common Styles */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header & Navbar */
+.head-container {
+    background-color: rgb(201, 252, 150);
+}
+
+.head_txt {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 300; /* Using light weight instead of "light" */
+    letter-spacing: 5px;
+}
+
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.navbar {
+    height: 12vh;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(144, 238, 144, 0.5), transparent);
+}
+
+.logo {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(91, 181, 96);
+}
+
+span {
+    color: lightpink;
+}
+
+.navlist {
+    gap: 2.5rem;
+    font-size: larger;
+}
+
+.link {
+    font-size: .95rem;
+    color: rgb(91, 181, 96);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: small;
+}
+
+.link-active,
+.link:hover,
+.icon:hover {
+    color: lightpink;
+}
+
+.nav-icons {
+    gap: .8em;
+}
+
+.icon {
+    font-size: .9rem;
+    color: rgb(91, 181, 96);
+    background: rgb(198, 252, 193);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* Search Box */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    width: 0;
+    padding: 10px;
+    border: 1px solid #a8ff85;
+    border-radius: 20px;
+    transition: width 0.4s ease-in-out;
+    outline: none;
+    opacity: 0;
+}
+
+.search-container:hover input {
+    width: 200px;
+    opacity: 1;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(91, 181, 96);
+    text-align: center;
+}
+
+/* Base & Hero */
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: #fffefc;
+  color: #222;
+}
+.hero {
+  background-color: #fffdf4;
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 1.5s ease;
+}
+.hero-title {
+  font-family: 'Unbounded', cursive;
+  font-size: 4.2rem;
+  color: #94ec8c;
+  animation: glow 8s ease-in-out infinite alternate;
+}
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #94ec8c;
+  animation: glow 4s ease-in-out infinite alternate;
+  margin-top: 10px;
+}
+.intro p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Values Section */
+.values {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.value-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 40px 60px;
+  gap: 30px;
+  min-height: 320px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Text half-width */
+.value-text {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+/* Speech-bubble heading */
+.value-heading {
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #222;
+  padding: 8px 12px;
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.value-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: #ffffffcc transparent;
+  width: 0;
+  height: 0;
+}
+
+/* Larger paragraph */
+.value-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* Image half-width */
+.value-card img {
+  flex: 0 0 30%;
+  width: 50%;
+  height: 40%;
+  object-fit: cover;
+  border-radius: 20px;
+  background-image: url("../images/aboutwomen.png"); /* ✅ this should work if CSS is in /css and image in /images */
+  
+}
+
+/* Pastel backgrounds */
+.pink  { background-color: #fff5fa; }
+.green { background-color: #f1fff5; }
+.blue  { background-color: #f4faff; }
+
+/* Founders Section  */
+.founders {
+  background-color: #fffce5;
+  padding: 80px 20px;
+  text-align: center;
+}
+.founders h2 {
+  font-family: 'Unbounded', cursive;
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+}
+.founder-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+.founder-card {
+  width: 220px;
+  height: 280px;
+  perspective: 1000px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+.founder-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 15px;
+}
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.card-front p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #f0faff;
+  text-align: center;
+  padding: 20px;
+  color: #444;
+}
+.social-icons {
+  margin-top: 15px;
+}
+.social-icons a {
+  color: #444;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.social-icons a:hover {
+  color: #0077b5;
+}
+
+/* Animations */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffcc70; }
+  to   { text-shadow: 0 0 20px #ffcc70, 0 0 30px #ffcc70; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to bottom, #f8f8f8, #e8f5e9);
+  padding: 50px 0 20px;
+  color: #555;
+  font-family: "Lato", sans-serif;
+}
+
+.footer-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+  margin-right: 50px;
+}
+
+.footer-logo a {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: rgb(91, 181, 96);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  color: rgb(91, 181, 96);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: lightpink;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: lightpink;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: rgb(91, 181, 96);
+  min-width: 16px;
+}
+
+/* Updated Footer Social Media Section */
+.social-and-payment {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;  /* Increased gap for more spacing between icons */
+  justify-content: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(198, 252, 193);
+  color: rgb(91, 181, 96);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: lightpink;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  max-width: 80%;
+  margin: 20px auto 0;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.payment-methods i {
+  font-size: 24px;
+  color: #666;
+}
+
+.payment-icon {
+  height: 24px;
+  width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container, 
+  .social-and-newsletter, 
+  .copyright {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .footer-logo, 
+  .footer-links, 
+  .footer-column {
+      margin-right: 0;
+      margin-bottom: 30px;
+  }
+  
+  .footer-column h4::after {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .social-icons {
+      margin: 0 auto 20px;
+  }
+  
+  .contact-info li {
+      justify-content: center;
+  }
+  
+  .payment-methods {
+      margin-top: 15px;
+      justify-content: center;
+  }
+  
+  /* Add responsive styles for other sections */
+  .hero-container {
+      max-width: 90%;
+      top: 15%;
+  }
+  
+  .textbig {
+      font-size: 2rem;
+  }
+  
+  .textsmll {
+      font-size: 1rem;
+  }
+  
+  .navlist {
+      display: none; /* You may want to implement a mobile menu toggle */
+  }
+}
