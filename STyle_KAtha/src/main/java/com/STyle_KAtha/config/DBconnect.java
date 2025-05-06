@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class DBconnect {
 
 	// Database configuration information
-	private static final String DB_NAME = "STyle_KAtha";
+	private static final String DB_NAME = "style_katha";
 	private static final String URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";

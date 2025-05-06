@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -28,15 +29,8 @@ body {
 }
 
 .title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2f6f4e;
+  align-items: center;
   text-align: center;
-  margin-bottom: 10px;
-}
-
-.title .pink {
-  color: #f472b6;
 }
 
 .message {
@@ -46,10 +40,32 @@ body {
   margin-bottom: 30px;
 }
 
+/* Alert styles - Make sure these are not overridden elsewhere */
+.alert {
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  display: block; /* Make sure this is displayed as block */
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .form-row {
@@ -72,7 +88,8 @@ body {
   position: relative;
 }
 
-.input-box input, .input-box select {
+.input-box input,
+.input-box select {
   width: 100%;
   padding: 12px 15px;
   border: 2px solid #a7d7c5;
@@ -82,7 +99,8 @@ body {
   outline: none;
 }
 
-.input-box input:focus, .input-box select:focus {
+.input-box input:focus,
+.input-box select:focus {
   border-color: #f472b6;
   box-shadow: 0 0 5px #f472b6;
 }
@@ -129,15 +147,26 @@ body {
   color: #d63f7a;
 }
 
+/* File input styling */
+.input-box input[type="file"] {
+  padding: 10px 15px;
+  border: 2px solid #a7d7c5;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #2f6f4e;
+  background-color: white;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 20px 15px;
   }
-  
+
   .title {
     font-size: 24px;
   }
-  
+
   .form-row {
     flex-direction: column;
     gap: 15px;

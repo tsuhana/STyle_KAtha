@@ -10,14 +10,14 @@ import java.io.IOException;
 /**
  * @author samjhanatamang
  */
-@WebServlet(asyncSupported = true, urlPatterns = { "/user" })
-public class UserController extends HttpServlet {
+@WebServlet(asyncSupported = true, urlPatterns = { "/customer" })
+public class CustomerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserController() {
+    public CustomerController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,7 +26,7 @@ public class UserController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/pages/user.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/pages/customer.jsp").forward(request, response);
 		}
 
 }

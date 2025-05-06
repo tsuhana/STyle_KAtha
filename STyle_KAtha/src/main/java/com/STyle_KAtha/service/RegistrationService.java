@@ -8,63 +8,55 @@ import java.sql.SQLException;
 import com.STyle_KAtha.config.DBconnect;
 import com.STyle_KAtha.model.CustomerModel;
 
-/**
- * RegisterService handles the registration of new students. It manages database
- * interactions for student registration.
- */
 public class RegistrationService {
 
-	private Connection dbConn;
+    private Connection dbConn;
 
-	/**
-	 * Constructor initializes the database connection.
-	 */
-	public RegistrationService() {
-		try {
-			this.dbConn = DBconnect.getDbConnection();
-		} catch (SQLException | ClassNotFoundException ex) {
-			System.err.println("Database connection error: " + ex.getMessage());
-			ex.printStackTrace();
-		}
-	}
+    public RegistrationService() {
+        try {
+            this.dbConn = DBconnect.getDbConnection();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.err.println("Database connection error: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 
+    public boolean addCustomer(CustomerModel customer) {
+        if (dbConn == null) {
+            System.err.println("Database connection is not available.");
+            return false;
+        }
 
-	/**
-	 * Registers a new student in the database.
-	 *
-	 * @param studentModel the student details to be registered
-	 * @return Boolean indicating the success of the operation
-	 */
-	public Boolean addCustomer(CustomerModel customerModel) {
-		if (dbConn == null) {
-			System.err.println("Database connection is not available.");
-			return null;
-			
-		}
+        String insertSQL = 
+            "INSERT INTO customer (" +
+            " First_Name, Last_Name, Username, Address, Gender, " +
+            " Date_Of_Birth, Phone_Number, Password, image_path" +
+            ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-		String programQuery = "SELECT Customer_ID FROM customer WHERE name = ?";
-		String insertQuery = "INSERT INTO customer (First_Name, Last_name, Username,Address, Gender, Date_Of_Birth, Phone_Number, Password) "
-				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, )";
+        try (PreparedStatement ps = dbConn.prepareStatement(insertSQL)) {
+            ps.setString(1, customer.getFirst_name());
+            ps.setString(2, customer.getLast_name());
+            ps.setString(3, customer.getUsername());
+            ps.setString(4, customer.getAddress());
+            ps.setString(5, customer.getGender());
 
-		try (PreparedStatement programStmt = dbConn.prepareStatement(programQuery);
-				PreparedStatement insertStmt = dbConn.prepareStatement(insertQuery)) {
+            // Date_Of_Birth → java.sql.Date
+            if (customer.getDate_of_birth() != null) {
+                ps.setDate(6, Date.valueOf(customer.getDate_of_birth()));
+            } else {
+                ps.setNull(6, java.sql.Types.DATE);
+            }
 
-			
-			// Insert student details
-			insertStmt.setString(1, customerModel.getFirst_Name());
-			insertStmt.setString(2, customerModel.getLast_Name());
-			insertStmt.setString(3, customerModel.getUsername());
-			insertStmt.setString(4, customerModel.getUsername());
-			insertStmt.setString(5, customerModel.getGender());
-			insertStmt.setDate(6, Date.valueOf(customerModel.getDate_Of_Birth()))   ;
-			insertStmt.setString(7, customerModel.getPhone_Number());
-			insertStmt.setString(8, customerModel.getPassword());
+            ps.setString(7, customer.getPhone_number());
+            ps.setString(8, customer.getPassword());
+            ps.setString(9, customer.getImage_path());
 
-			return insertStmt.executeUpdate() > 0;
-		} catch (SQLException e) {
-			System.err.println("Error during student registration: " + e.getMessage());
-			e.printStackTrace();
-			return null;
-		}
-	}
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error during customer registration: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

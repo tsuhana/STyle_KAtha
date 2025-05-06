@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,13 @@
     <div class="message">
       Welcome to STyle_कथा. Please log in to continue.
     </div>
-    <form class="form" action="#" method="POST">
+
+    <!-- Show login error if exists -->
+    <c:if test="${not empty error}">
+      <div style="color:red; margin-top: 10px;">${error}</div>
+    </c:if>
+
+    <form class="form" action="${pageContext.request.contextPath}/login" method="POST">
       <div class="form-group">
         <label for="username">Username</label>
         <div class="input-box">
@@ -42,6 +49,7 @@
       </div>
       <button type="submit" class="btn">Log In</button>
     </form>
+
     <p class="signup">
       Don't have an account? <a href="${pageContext.request.contextPath}/registration">Sign Up</a>
     </p>

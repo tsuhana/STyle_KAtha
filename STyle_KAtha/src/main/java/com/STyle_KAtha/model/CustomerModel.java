@@ -1,120 +1,120 @@
-
 package com.STyle_KAtha.model;
 
 import java.time.LocalDate;
 
 public class CustomerModel {
 
-	private int Customer_ID;
-	private String First_Name;
-	private String Last_Name;
-	private String Username;
-	private String Address;
-	private String Gender;
-	private LocalDate Date_Of_Birth;
-	private String Phone_Number;
-	private String Password;
-	
+    private int customer_id;
+    private String first_name;
+    private String last_name;
+    private String username;
+    private String address;
+    private String gender;
+    private LocalDate date_of_birth;
+    private String phone_number;
+    private String password;
+    private String image_path;
 
-	public CustomerModel() {
-	}
+    public CustomerModel() {
+    }
 
-	public CustomerModel(String UserName, String Password) {
-		this.Username = UserName;
-		this.Password = Password;
-	}
+    public CustomerModel(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
-	public CustomerModel(String First_Name, String Last_Name, String Username, String Address,
-			String Gender, LocalDate Date_Of_Birth, String Phone_Number, String Password) {
-		super();
-		
-		
-		this.First_Name = First_Name;
-		this.Last_Name = Last_Name;
-		this.Username = Username;
-		this.Address = Address;
-		this.Gender = Gender;
-		this.Date_Of_Birth = Date_Of_Birth;
-		this.Phone_Number = Phone_Number;
-		this.Password = Password;
-		
-	}
+    public CustomerModel(String first_name, String last_name, String username, String address,
+                         String gender, LocalDate date_of_birth, String phone_number, String password, String image_path) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.username = username;
+        this.address = address;
+        this.gender = gender;
+        this.date_of_birth = date_of_birth;
+        this.phone_number = phone_number;
+        this.password = password;
+        this.image_path = image_path;
+    }
 
-	/** Getter and Setter*/
+    // Getter and Setter Methods
 
-	public int getCustomer_ID() {
-		return Customer_ID;
-	}
+    public int getCustomer_id() {
+        return customer_id;
+    }
 
-	public void setCustomer_ID(int Customer_ID) {
-		this.Customer_ID = Customer_ID;
-	}
+    public void setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
+    }
 
-	public String getFirst_Name() {
-		return First_Name;
-	}
+    public String getFirst_name() {
+        return first_name;
+    }
 
-	public void setFirst_Name(String First_Name) {
-		this.First_Name = First_Name;
-	}
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
 
-	public String getLast_Name() {
-		return Last_Name;
-	}
+    public String getLast_name() {
+        return last_name;
+    }
 
-	public void setLastName(String Last_Name) {
-		this.Last_Name = Last_Name;
-	}
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
 
-	public String getUsername() {
-		return Username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setUserName(String Username) {
-		this.Username = Username;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getAddress() {
-		return Address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setAddress(String Address) {
-		this.Address = Address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public String getGender() {
-		return Gender;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setGender(String Gender) {
-		this.Gender = Gender;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	
-	public LocalDate getDate_Of_Birth() {
-		return Date_Of_Birth;
-	}
+    public LocalDate getDate_of_birth() {
+        return date_of_birth;
+    }
 
-	public void setDate_Of_Birth(LocalDate Date_Of_Birth) {
-		this.Date_Of_Birth = Date_Of_Birth;
-	}
+    public void setDate_of_birth(LocalDate date_of_birth) {
+        this.date_of_birth = date_of_birth;
+    }
 
+    public String getPhone_number() {
+        return phone_number;
+    }
 
-	public String getPhone_Number() {
-		return Phone_Number;
-	}
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
 
-	public void setPhone_Number(String Phone_Number) {
-		this.Phone_Number = Phone_Number;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getPassword() {
-		return Password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setPassword(String Password) {
-		this.Password = Password;
-	}
+    public String getImage_path() {
+        return image_path;
+    }
+
+    public void setImage_path(String image_path) {
+        this.image_path = image_path;
+    }
 }
-
-	

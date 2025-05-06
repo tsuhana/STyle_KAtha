@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,59 +8,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STyle_कथा Sign Up</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/registration.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/registration.css">
 </head>
 <body>
   <div class="container">
     <div class="title">
-      STyle<span class="pink">_कथा</span>
+      <a href="${pageContext.request.contextPath}/home">
+        <img alt="STyle_कथा Logo" src="${pageContext.request.contextPath}/images/logoreg.png">
+      </a>
     </div>
+
     <div class="message">
       Create your STyle_कथा account to continue.
     </div>
-    <form class="form" action="#" method="POST">
-      <!-- Name fields (side by side) -->
+
+    <!-- Success/Error Message Display with class names that match CSS -->
+    <c:if test="${not empty success}">
+      <div class="alert alert-success">${success}</div>
+    </c:if>
+
+    <c:if test="${not empty error}">
+      <div class="alert alert-danger">${error}</div>
+    </c:if>
+
+    <form class="form" action="${pageContext.request.contextPath}/registration" method="POST">
       <div class="form-row">
         <div class="form-group">
-          <label for="firstName">First Name</label>
+          <label for="First_Name">First Name</label>
           <div class="input-box">
-            <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+            <input type="text" id="First_Name" name="first_name" placeholder="Enter first name" required>
             <i class="fas fa-user"></i>
           </div>
         </div>
         <div class="form-group">
-          <label for="lastName">Last Name</label>
+          <label for="Last_Name">Last Name</label>
           <div class="input-box">
-            <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+            <input type="text" id="Last_Name" name="last_name" placeholder="Enter last name" required>
             <i class="fas fa-user"></i>
           </div>
         </div>
       </div>
-      
-      <!-- Username -->
+
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="Username">Username</label>
         <div class="input-box">
-          <input type="text" id="username" name="username" placeholder="Choose a username" required>
+          <input type="text" id="Username" name="username" placeholder="Choose a username" required>
           <i class="fas fa-user-circle"></i>
         </div>
       </div>
-      
-      <!-- Address -->
+
       <div class="form-group">
-        <label for="address">Address</label>
+        <label for="Address">Address</label>
         <div class="input-box">
-          <input type="text" id="address" name="address" placeholder="Enter your address" required>
+          <input type="text" id="Address" name="address" placeholder="Enter your address" required>
           <i class="fas fa-home"></i>
         </div>
       </div>
-      
-      <!-- Gender and Date of Birth (side by side) -->
+
       <div class="form-row">
         <div class="form-group">
-          <label for="gender">Gender</label>
+          <label for="Gender">Gender</label>
           <div class="input-box">
-            <select id="gender" name="gender" required>
+            <select id="Gender" name="gender" required>
               <option value="" disabled selected>Select gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -69,41 +78,48 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="dob">Date of Birth</label>
+          <label for="Date_Of_Birth">Date of Birth</label>
           <div class="input-box">
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="Date_Of_Birth" name="date_of_birth" required>
           </div>
         </div>
       </div>
-      
-      <!-- Phone Number -->
+
       <div class="form-group">
-        <label for="phone">Phone Number</label>
+        <label for="Phone_Number">Phone Number</label>
         <div class="input-box">
-          <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+          <input type="tel" id="Phone_Number" name="phone_number" placeholder="Enter phone number" required>
           <i class="fas fa-phone"></i>
         </div>
       </div>
-      
-      <!-- Password fields (side by side) -->
+
       <div class="form-row">
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="Password">Password</label>
           <div class="input-box">
-            <input type="password" id="password" name="password" placeholder="Create password" required>
+            <input type="password" id="Password" name="password" placeholder="Create password" required>
             <i class="fas fa-lock"></i>
           </div>
         </div>
         <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
+          <label for="Confirm_Password">Confirm Password</label>
           <div class="input-box">
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+            <input type="password" id="Confirm_Password" name="confirmPassword" placeholder="Confirm password" required>
             <i class="fas fa-lock"></i>
           </div>
         </div>
       </div>
-      
-      <!-- Submit button -->
+		<div class="form-group">
+  		  <label for="Profile_Image">Upload Profile Image</label>
+  		  <div class="input-box">
+   		    <input type="file" id="Profile_Image" name="profile_image" accept="image/*" required>
+    	    <i class="fas fa-image"></i>
+ 		 </div>
+	   </div>
+		
+
+      <input type="hidden" name="image_path" value="images/default.png">
+
       <button type="submit" class="btn">Sign Up</button>
     </form>
     <p class="login">

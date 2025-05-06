@@ -120,7 +120,7 @@
           <div class="card-back">
             <p><strong>Leader/Front-End Developer</strong></p>
             <div class="social-icons">
-              <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+              <a href="https://instagram.com/_.s.u.h.a.n.a_"><i class="fab fa-instagram"></i></a>
               <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>

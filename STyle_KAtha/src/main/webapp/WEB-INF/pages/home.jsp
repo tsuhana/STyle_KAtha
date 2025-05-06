@@ -26,17 +26,18 @@
                     <li>
                         <a href="${pageContext.request.contextPath}/" class="link link-active">Home</a>
                     </li>
+                    
                     <li>
-                        <a href="#" class="link">Product</a>
+                        <a href="${pgaeContext.request.contextPath}/product" class="link">Product</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath }/blogs" class="link">Blog</a>
+                        <a href="${pageContext.request.contextPath}/blogs" class="link">Blog</a>
                     </li>
                     <li>
-                        <a href="#" class="link">Contact </a>
+                        <a href="${pageContext.request.contextPath}/contactus" class="link">Contact </a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath }/aboutus" class="link">About</a>
+                        <a href="${pageContext.request.contextPath}/aboutus" class="link">About</a>
                     </li>
                 </ul>
                 <li class="nav-icons flex">
@@ -53,7 +54,7 @@
                     <a href="#" class="icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </a>
-                    <a href="#" class="icon">
+                    <a href="${pageContext.request.contextPath}/registration" class="icon">
                         <i class="fa-solid fa-user"></i>
                     </a>
                     <a href="#" class="icon">

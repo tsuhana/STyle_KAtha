@@ -29,10 +29,10 @@ public class SessionUtil {
      * @param key     the key of the attribute to retrieve
      * @return the attribute value, or null if the attribute does not exist or the session is invalid
      */
-    public static Object getAttribute(HttpServletRequest request, String key) {
+    public static Object getAttribute(HttpServletRequest request, String username) {
         HttpSession session = request.getSession(false);
         if (session != null) {
-            return session.getAttribute(key);
+            return session.getAttribute(username);
         }
         return null;
     }
